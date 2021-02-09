@@ -2,7 +2,7 @@
 const http = require('http');
 const fs = require('fs');
 
-//Creatin a server on the post 3000 using http core modul; attributes of the server are "req" and "res"
+//Creating a server on the post 3000 using http core modul; attributes of the server are "req" and "res"
 const server = http.createServer((req, res) => {
     console.log('**Server created! Request is send to localhost 3000****');
     console.log("My url: " + req.url, "My method: " + req.method);
@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
     if (req.url == "/" && req.method == "GET") { 
         //using fs core module to make rs variable with content of index.html
         let rs = fs.createReadStream('index.html');
-        //striming between indew and server response
+        //striming between index and server response
         rs.pipe(res);
     }
 
